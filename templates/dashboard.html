@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bharat Care | Staff Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         DASHBOARD HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <div class="header-left">
+
+            <div class="hospital-logo">
+                <i class="fa-solid fa-hospital"></i>
+            </div>
+
+            <div>
+                <h1>BHARAT CARE</h1>
+                <p>Hospital Staff Dashboard</p>
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="user-info">
+
+                <span id="dashboardUserName">
+                    Loading...
+                </span>
+
+                <small id="dashboardUserRole">
+                    Staff
+                </small>
+
+            </div>
+
+
+            <button id="logoutBtn" class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN DASHBOARD
+    ========================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- PAGE TITLE -->
+
+        <section class="dashboard-title doctor-opd-section">
+
+            <div>
+
+                <h2>
+                    Today's OPD Overview
+                </h2>
+
+                <p>
+                    Monitor bookings, OPD completion and available slots.
+                </p>
+
+            </div>
+
+
+            <!-- DATE SELECTOR -->
+
+            <div class="date-selector">
+
+                <label for="dashboardDate">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    Select Date
+
+                </label>
+
+                <input type="date" id="dashboardDate">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SUMMARY CARDS
+        ========================== -->
+
+        <section class="summary-grid doctor-opd-section">
+
+
+            <!-- TOTAL BOOKINGS -->
+
+            <div class="summary-card">
+
+                <div class="card-icon bookings-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Total Bookings</p>
+
+                    <h3 id="totalBookings">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- OPD COMPLETED -->
+
+            <div class="summary-card">
+
+                <div class="card-icon completed-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <p>OPD Completed</p>
+
+                    <h3 id="completedOPD">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- OPD PENDING -->
+
+            <div class="summary-card">
+
+                <div class="card-icon pending-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <p>OPD Remaining</p>
+
+                    <h3 id="pendingOPD">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VACANT SEATS -->
+
+            <div class="summary-card">
+
+                <div class="card-icon vacant-icon">
+
+                    <i class="fa-solid fa-chair"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Vacant Seats</p>
+
+                    <h3 id="vacantSeats">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             DOCTOR SELECTOR
+             MANAGER ONLY
+        ========================== -->
+
+        <section class="filter-section doctor-opd-section" id="doctorFilterSection">
+
+            <div class="filter-box">
+
+                <label for="doctorSelect">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    Select Doctor
+
+                </label>
+
+
+                <select id="doctorSelect">
+
+                    <option value="">
+                        Loading doctors...
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SLOT STATUS
+        ========================== -->
+
+        <section class="dashboard-section doctor-opd-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-clock"></i>
+
+                        Slot Status
+                    </h2>
+
+                    <p id="selectedDoctorTitle">
+                        Loading...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="slots-grid" id="slotsContainer">
+
+
+                <p class="loading-text">
+
+                    Loading slot information...
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PATIENT LIST
+        ========================== -->
+
+        <section class="dashboard-section doctor-opd-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-users"></i>
+
+                        Today's Patients
+                    </h2>
+
+                    <p>
+                        Mark OPD as completed after consultation.
+                    </p>
+
+                </div>
+
+
+                <div class="patient-count">
+
+                    <span id="patientListCount">
+                        0
+                    </span>
+
+                    Patients
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table class="patients-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>Token</th>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Slot</th>
+                            <th>Reason</th>
+                            <th id="thQueue">Queue</th>
+                            <th>Fee</th>
+                            <th>Consult Status</th>
+                            <th>Test Status</th>
+                            <th id="thFollowup">Follow-up</th>
+                            <th>Doctor</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="patientsTableBody">
+
+                        <tr>
+
+                            <td colspan="15" class="empty-row">
+
+                                Loading patients...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================================
+             DOCTOR FEE COLLECTION / CASHIER
+        ========================================================== -->
+        <section class="dashboard-section role-dashboard" id="collectionDashboardSection">
+            <div class="section-heading">
+                <div><h2><i class="fa-solid fa-cash-register"></i> Doctor Fee Collection</h2><p>Overall and doctor-wise consultation collection. Only authorized collection staff can change payment status.</p></div>
+                <div class="collection-filters"><input type="date" id="collectionDate"><select id="collectionDoctor"><option value="">Overall — All Doctors</option></select></div>
+            </div>
+            <div class="collection-cards">
+                <div class="collection-card"><span>Total Patients</span><strong id="collectionPatients">0</strong></div>
+                <div class="collection-card"><span>Total Billing</span><strong id="collectionTotalBilling">₹0</strong></div>
+                <div class="collection-card"><span>Paid Collection</span><strong id="collectionPaid">₹0</strong></div>
+                <div class="collection-card"><span>Pending Amount</span><strong id="collectionPending">₹0</strong></div>
+            </div>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Token</th><th>Patient</th><th>Doctor</th><th>Type</th><th>Fee</th><th>Payment</th></tr></thead><tbody id="collectionTableBody"><tr><td colspan="6">Loading...</td></tr></tbody></table></div>
+            <h3 class="sub-dashboard-title">Doctor-wise Collection</h3>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Doctor</th><th>Patients</th><th>Paid</th><th>Pending</th><th>Total Billing</th></tr></thead><tbody id="doctorCollectionBody"></tbody></table></div>
+        </section>
+
+        <!-- =========================================================
+             LAB CASHIER / STAFF
+        ========================================================== -->
+        <section class="dashboard-section role-dashboard" id="labDashboardSection">
+            <div class="section-heading">
+                <div><h2><i class="fa-solid fa-flask"></i> Laboratory Billing</h2><p>Select a date/doctor to view the patient list. Use the selected date + Token Number together to open one patient.</p></div>
+            </div>
+            <div class="lab-patient-entry"><label>Token Number</label><input id="labTokenNumber" type="text" placeholder="e.g. URO-01" style="text-transform:uppercase"><button class="complete-btn" onclick="lookupLabToken()">Open Patient</button></div>
+            <div id="labPatientDetails" class="lab-patient-details" style="display:none;margin:14px 0;padding:14px;border:1px solid var(--border-color,#ddd);border-radius:8px;">
+                <p><strong>Patient:</strong> <span id="labDetailPatientName"></span> (<span id="labDetailPatientAgeGender"></span>) — <span id="labDetailPatientPhone"></span></p>
+                <p><strong>Doctor:</strong> <span id="labDetailDoctorName"></span> — <span id="labDetailDoctorSpecialty"></span></p>
+                <p><strong>Appointment:</strong> <span id="labDetailAppointmentInfo"></span></p>
+            </div>
+            <div id="labBillingArea" style="display:none;">
+                <div id="labTestList" class="lab-test-list"><p>Loading tests...</p></div>
+                <div class="lab-total-bar"><span>Selected Tests: <strong id="labSelectedCount">0</strong></span><span>LAB TOTAL: <strong id="labTotal">₹0</strong></span></div>
+                <button class="complete-btn" onclick="saveLabBill()">Confirm Tests & Create Bill</button>
+            </div>
+
+            <div class="section-heading">
+                <div><h2 class="sub-dashboard-title" style="margin:0;">Lab Bills</h2><p>Overall (all doctors) by default. Payment status can only be changed for today's date.</p></div>
+                <div class="collection-filters"><input type="date" id="labBillDate"><select id="labBillDoctor"><option value="">All Doctors</option></select></div>
+            </div>
+            <div class="collection-cards">
+                <div class="collection-card"><span>Total Lab Bills</span><strong id="labBillTotalBills">0</strong></div>
+                <div class="collection-card"><span>Total Billing</span><strong id="labBillTotalBilling">₹0</strong></div>
+                <div class="collection-card"><span>Paid</span><strong id="labBillPaid">₹0</strong></div>
+                <div class="collection-card"><span>Pending</span><strong id="labBillPending">₹0</strong></div>
+            </div>
+            <h3 class="sub-dashboard-title">Bills</h3>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Bill</th><th>Token</th><th>Patient</th><th>Doctor</th><th>Tests</th><th>Total</th><th>Payment</th></tr></thead><tbody id="labBillsBody"></tbody></table></div>
+            <h3 class="sub-dashboard-title" id="labBillDoctorWiseTitle">Doctor-wise Totals</h3>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Doctor</th><th>Bills</th><th>Paid</th><th>Pending</th><th>Total Billing</th></tr></thead><tbody id="labBillDoctorBody"></tbody></table></div>
+        </section>
+
+        <!-- =========================================================
+             LAB COLLECTION — MANAGER VIEW ONLY
+        ========================================================== -->
+        <section class="dashboard-section role-dashboard" id="labCollectionDashboardSection">
+            <div class="section-heading">
+                <div><h2><i class="fa-solid fa-flask"></i> Lab Collection (View Only)</h2><p>Select a date and doctor to see consultation and lab test collection. Payment status here cannot be changed — only Lab Cashier can update it.</p></div>
+                <div class="collection-filters"><input type="date" id="labCollectionDate"><select id="labCollectionDoctor"><option value="">Overall — All Doctors</option></select></div>
+            </div>
+            <div class="collection-cards">
+                <div class="collection-card"><span>Total Lab Bills</span><strong id="labCollTotalBills">0</strong></div>
+                <div class="collection-card"><span>Total Test Billing</span><strong id="labCollTotalBilling">₹0</strong></div>
+                <div class="collection-card"><span>Lab Paid</span><strong id="labCollPaid">₹0</strong></div>
+                <div class="collection-card"><span>Lab Pending</span><strong id="labCollPending">₹0</strong></div>
+            </div>
+            <table style="width:100%;margin:10px 0;border-collapse:collapse;">
+                <tr><td style="padding:6px 0;">Selected Date — Consultation Fee (Paid):</td><td><strong id="labCollConsultPaidSelected">₹0</strong></td></tr>
+                <tr><td style="padding:6px 0;">Today's Date — Consultation Fee (Paid):</td><td><strong id="labCollConsultPaidToday">₹0</strong></td></tr>
+                <tr><td style="padding:6px 0;">Selected Date — Lab Test Fee (Paid):</td><td><strong id="labCollTestPaidSelected">₹0</strong></td></tr>
+                <tr><td style="padding:6px 0;">Today's Date — Lab Test Fee (Paid):</td><td><strong id="labCollTestPaidToday">₹0</strong></td></tr>
+            </table>
+            <h3 class="sub-dashboard-title">Doctor-wise Lab Collection (Selected Date)</h3>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Doctor</th><th>Bills</th><th>Paid</th><th>Pending</th><th>Total Billing</th></tr></thead><tbody id="labCollDoctorBody"></tbody></table></div>
+            <h3 class="sub-dashboard-title">Lab Bills (Selected Date)</h3>
+            <div class="table-wrapper"><table class="patients-table"><thead><tr><th>Token</th><th>Patient</th><th>Doctor</th><th>Tests</th><th>Total</th><th>Payment</th></tr></thead><tbody id="labCollBillsBody"></tbody></table></div>
+        </section>
+
+        <!-- =========================================================
+     PATIENT REVIEWS MANAGEMENT
+========================================================= -->
+
+        <section class="dashboard-section reviews-dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-star"></i>
+                        Patient Reviews
+                    </h2>
+
+                    <p>
+                        Review patient feedback and approve it before
+                        publishing on the website.
+                    </p>
+
+                </div>
+
+
+                <div class="review-dashboard-count">
+
+                    <span id="pendingReviewsCount">
+                        0
+                    </span>
+
+                    Pending Reviews
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW LIST -->
+
+            <div class="dashboard-reviews-list" id="dashboardReviewsContainer">
+
+                <div class="dashboard-review-loading">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    Loading patient reviews...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         LOADING OVERLAY
+    ========================== -->
+
+    <div id="loadingOverlay" class="loading-overlay">
+
+        <div class="loader-box">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <p>
+                Updating dashboard...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+    ========================== -->
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/collection_lab.js') }}">
+    </script>
+
+
+</body>
+
+</html>

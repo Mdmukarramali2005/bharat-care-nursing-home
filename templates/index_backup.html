@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHARAT CARE NURSING HOME - Doctor Appointment & WhatsApp Booking | Kishanganj, Bihar</title>
+    <meta name="description"
+        content="Book doctor appointments online or via WhatsApp for Bharat Care Nursing Home, Kishanganj, Bihar. Experienced Urology, Gynecology, IVF Fertility & ENT Specialists.">
+    <meta name="keywords"
+        content="Bharat Care Nursing Home, Doctor Appointment Kishanganj, WhatsApp Doctor Booking, Dr Bharat Prasad, Dr Nidhi Kumari, Dr Shalini Prasad, Dr Sachin Prasad">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Design System -->
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="light-theme">
+
+    <!-- Top Emergency Bar -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <span><i class="fa-solid fa-truck-medical pulse-icon"></i> <strong>24/7 Helpline:</strong> +91
+                9472396919</span>
+            <span><i class="fa-brands fa-whatsapp whatsapp-color"></i> <strong>WhatsApp Booking:</strong> +91
+                9472396956</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-hospital-user"></i></div>
+                <div class="logo-text">
+                    <span class="brand-name">BHARAT <span class="text-gradient">CARE</span></span>
+                    <span class="brand-tagline">NURSING HOME • KISHANGANJ, BIHAR</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#specialties" class="nav-link">Departments</a>
+                <a href="#doctors" class="nav-link">Our Doctors</a>
+                <a href="#whatsapp-section" class="nav-link">WhatsApp OPD</a>
+                <a href="#location" class="nav-link">
+                    <i class="fa-solid fa-location-dot"></i>Location
+                </a>
+                <a href="#about" class="nav-link">Contact Us</a>
+            </div>
+
+            <div class="nav-actions">
+                <div id="authNavButtons" class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn"><i class="fa-solid fa-right-to-bracket"></i>
+                        Login</button>
+                    <button class="btn btn-primary" id="signupBtn"><i class="fa-solid fa-user-plus"></i>
+                        Register</button>
+                </div>
+                <div id="userProfileNav" class="user-profile-nav hidden">
+                    <button class="btn btn-secondary" id="dashboardToggleBtn"><i class="fa-solid fa-calendar-check"></i>
+                        My Appointments</button>
+                    <button class="btn btn-icon" id="logoutBtn" title="Logout"><i
+                            class="fa-solid fa-power-off"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+     HOSPITAL PHOTO GALLERY
+===================================================== -->
+
+    <section class="hospital-gallery-section" id="hospitalGallery">
+
+        <div class="gallery-heading">
+            <span class="gallery-small-title">
+                <i class="fas fa-images"></i>
+                BHARAT CARE
+            </span>
+
+            <h2>Our Hospital Gallery</h2>
+
+            <p>
+                Take a look at our facilities, doctors and patient care environment.
+            </p>
+        </div>
+
+
+        <div class="gallery-container">
+
+            <!-- Previous Button -->
+            <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Previous Image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+
+            <!-- Slides -->
+            <div class="gallery-slider" id="gallerySlider">
+
+
+                <!-- IMAGE 1 -->
+                <div class="gallery-slide active">
+                    <img src="/static/images/gallery/gallery1.jpg" alt="Bharat Care Reception">
+
+                    <div class="gallery-caption">
+                        <h3>Welcome to Bharat Care</h3>
+                        <p>Modern and patient-friendly healthcare environment</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 2 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery2.jpg" alt="Hospital Reception">
+
+                    <div class="gallery-caption">
+                        <h3>Modern Reception</h3>
+                        <p>A comfortable and hygienic waiting environment</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 3 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery3.jpg" alt="Hospital Facility">
+
+                    <div class="gallery-caption">
+                        <h3>Advanced Facilities</h3>
+                        <p>Healthcare supported by modern infrastructure</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 4 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery4.jpg" alt="Hospital Doctors">
+
+                    <div class="gallery-caption">
+                        <h3>Experienced Doctors</h3>
+                        <p>Dedicated specialists focused on patient care</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 5 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery5.jpg" alt="Patient Care">
+
+                    <div class="gallery-caption">
+                        <h3>Patient First Care</h3>
+                        <p>Your health, comfort and safety are our priority</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 6 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery6.jpg" alt="Medical Equipment">
+
+                    <div class="gallery-caption">
+                        <h3>Quality Healthcare</h3>
+                        <p>Professional care with modern medical facilities</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 7 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery7.jpg" alt="Hospital Pharmacy">
+
+                    <div class="gallery-caption">
+                        <h3>Complete Healthcare Support</h3>
+                        <p>Convenient services for our patients</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 8 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery8.jpg" alt="Hospital Entrance">
+
+                    <div class="gallery-caption">
+                        <h3>Easy Access</h3>
+                        <p>A welcoming healthcare destination in Kishanganj</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 9 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery9.jpg" alt="Hospital Room">
+
+                    <div class="gallery-caption">
+                        <h3>Comfortable Patient Care</h3>
+                        <p>Clean, safe and comfortable healthcare spaces</p>
+                    </div>
+                </div>
+
+
+                <!-- IMAGE 10 -->
+                <div class="gallery-slide">
+                    <img src="/static/images/gallery/gallery10.jpg" alt="Bharat Care Building">
+
+                    <div class="gallery-caption">
+                        <h3>Bharat Care Nursing Home</h3>
+                        <p>Committed to better healthcare for everyone</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Next Button -->
+            <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Next Image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- DOTS -->
+        <div class="gallery-indicators" id="galleryIndicators"></div>
+
+
+        <div class="gallery-auto-text">
+            <i class="fas fa-clock"></i>
+            Images change automatically every 5 seconds
+        </div>
+
+    </section>
+
+
+    <!-- END HOSPITAL PHOTO GALLERY -->
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-pill"><i class="fa-solid fa-award"></i> Premier Nursing Home in Kishanganj</div>
+                <h1 class="hero-title">BHARAT CARE <span class="highlight-text">NURSING HOME</span></h1>
+                <p class="hero-subtitle">Consult top Senior Professors & Specialists in Urology, Gynecology, IVF
+                    Fertility, and ENT. Book your OPD appointment online or directly via WhatsApp!</p>
+
+                <!-- Search Box -->
+                <div class="search-box-card glass-panel">
+                    <div class="search-field">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="searchInput"
+                            placeholder="Search Doctor Name or Specialty (e.g. Dr. Bharat, ENT, IVF)...">
+                    </div>
+                    <div class="search-field select-field">
+                        <i class="fa-solid fa-user-doctor search-icon"></i>
+                        <select id="specialtySelect">
+                            <option value="All">All Departments</option>
+                            <option value="Urology">Urology</option>
+                            <option value="Gynecologist & Obstetrician">Gynecologist & Obstetrician</option>
+                            <option value="Gynecologist & Fertility Specialist">Gynecologist & Fertility Specialist
+                                (IVF)</option>
+                            <option value="ENT Specialist">ENT Specialist (Otolaryngologist)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary search-btn" id="searchBtn">Find Doctor</button>
+                </div>
+
+                <!-- Stats Badges -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>₹500</h3>
+                        <p>OPD Consultation Fee</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4 Departments</h3>
+                        <p>Specialist Doctors</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>7 Days</h3>
+                        <p>OPD Available</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-card-floating float-1">
+                    <i class="fa-brands fa-whatsapp wa-icon"></i>
+                    <div>
+                        <strong>WhatsApp Booking</strong>
+                        <span>+91 9472396918</span>
+                    </div>
+                </div>
+                <div class="hero-card-floating float-2">
+                    <i class="fa-solid fa-clock time-icon"></i>
+                    <div>
+                        <strong>OPD Timings</strong>
+                        <span>10:00 AM - 05:00 PM</span>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80"
+                    alt="Bharat Care Nursing Home" class="hero-main-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="section specialties-section" id="specialties">
+        <div class="container">
+            <div class="section-header center">
+                <span class="sub-title">SPECIALIST DEPARTMENTS</span>
+                <h2>Our Medical Departments</h2>
+                <p>Expert healthcare services delivered by Senior Professors & Medical Specialists</p>
+            </div>
+
+
+            <div class="specialties-grid">
+                <div class="specialty-card active" data-spec="All">
+                    <div class="spec-icon gen"><i class="fa-solid fa-border-all"></i></div>
+                    <h3>All Departments</h3>
+                    <p>View all 4 specialist doctors</p>
+                </div>
+                <div class="specialty-card" data-spec="Urology">
+                    <div class="spec-icon heart"><i class="fa-solid fa-kidneys"></i></div>
+                    <h3>Urology</h3>
+                    <p>Dr. Bharat Prasad</p>
+                </div>
+                <div class="specialty-card" data-spec="Gynecologist & Obstetrician">
+                    <div class="spec-icon child"><i class="fa-solid fa-user-nurse"></i></div>
+                    <h3>Gynecology & OBS</h3>
+                    <p>Dr. Nidhi Kumari</p>
+                </div>
+                <div class="specialty-card" data-spec="Gynecologist & Fertility Specialist">
+                    <div class="spec-icon brain"><i class="fa-solid fa-baby"></i></div>
+                    <h3>Fertility & IVF</h3>
+                    <p>Dr. Shalini Prasad</p>
+                </div>
+                <div class="specialty-card" data-spec="ENT Specialist">
+                    <div class="spec-icon bone"><i class="fa-solid fa-ear-listen"></i></div>
+                    <h3>ENT Specialist</h3>
+                    <p>Dr. Sachin Prasad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor List Section -->
+    <section class="section doctors-section" id="doctors">
+        <div class="container">
+            <div class="section-header flex-between">
+                <div>
+                    <span class="sub-title">OUR SPECIALIST DOCTORS</span>
+                    <h2>Book Doctor Consultation</h2>
+                </div>
+                <div class="view-filter-text" id="activeFilterLabel">Showing: All Doctors</div>
+            </div>
+
+            <!-- Doctor Cards Grid -->
+            <div class="doctors-grid" id="doctorsContainer">
+                <div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Loading Doctor Catalog...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Booking Showcase Section -->
+    <section class="section whatsapp-showcase" id="whatsapp-section">
+        <div class="container">
+            <div class="wa-showcase-card glass-panel">
+                <div class="wa-content">
+                    <div class="wa-badge"><i class="fa-brands fa-whatsapp"></i> WHATSAPP BOOKING HOTLINE</div>
+                    <h2>Doctor Ka Appointment WhatsApp Par Lein!</h2>
+                    <p>Bharat Care Nursing Home me appointment ke liye aap seedhe WhatsApp number
+                        <strong>9472396956</strong> par chat karke doctor, date aur time slot select kar sakte hain.
+                    </p>
+
+                    <div class="wa-features-list">
+                        <div class="wa-feat"><i class="fa-solid fa-circle-check"></i> Instant WhatsApp Confirmation
+                        </div>
+                        <div class="wa-feat"><i class="fa-solid fa-circle-check"></i> Interactive AI Chat Assistant
+                        </div>
+                        <div class="wa-feat"><i class="fa-solid fa-circle-check"></i> All 4 Departments Available</div>
+                        <div class="wa-feat"><i class="fa-solid fa-circle-check"></i> OPD Consultation Fee: ₹500</div>
+                    </div>
+
+                    <div class="wa-cta-buttons">
+                        <button class="btn btn-whatsapp btn-lg" id="triggerWaSimBtn">
+                            <i class="fa-brands fa-whatsapp"></i> Open Interactive WhatsApp Bot
+                        </button>
+                        <a href="https://wa.me/919472396956?text=Namaste,%20I%20want%20to%20book%20an%20appointment%20at%20Bharat%20Care%20Nursing%20Home."
+                            target="_blank" class="btn btn-outline btn-lg">
+                            <i class="fa-solid fa-external-link"></i> Open Direct WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="wa-mockup-preview">
+                    <div class="phone-frame">
+                        <div class="phone-header">
+                            <div class="phone-avatar"><i class="fa-solid fa-hospital"></i></div>
+                            <div>
+                                <strong>Bharat Care Bot</strong>
+                                <span class="online-status">● Online (9472396956)</span>
+                            </div>
+                        </div>
+                        <div class="phone-chat-body">
+                            <div class="chat-bubble incoming">Namaste! Swagat hai Bharat Care Nursing Home me. Reply 1
+                                to Book Appointment.</div>
+                            <div class="chat-bubble outgoing">1</div>
+                            <div class="chat-bubble incoming">Select Specialty: 1. Urology 2. Gynecologist 3. Fertility
+                                & IVF 4. ENT</div>
+                            <div class="chat-bubble outgoing">1</div>
+                            <div class="chat-bubble incoming">✅ Appointment Confirmed! Doctor: Dr. Bharat Prasad. Fee:
+                                ₹500.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+     PATIENT REVIEWS SECTION
+========================================================= -->
+
+    <section class="reviews-section" id="patientReviews">
+
+        <div class="section-heading">
+            <span class="section-badge">
+                <i class="fa-solid fa-heart"></i>
+                Patient Experiences
+            </span>
+
+            <h2>
+                What Our Patients Say
+            </h2>
+
+            <p>
+                Your experience matters to us.
+                Read what our patients have shared about Bharat Care Nursing Home.
+            </p>
+        </div>
+
+
+        <!-- GOOGLE REVIEW BOX -->
+        <div class="google-review-box">
+
+            <div class="google-review-header">
+
+                <div class="google-icon">
+                    <i class="fa-brands fa-google"></i>
+                </div>
+
+                <div>
+                    <h3>Google Reviews</h3>
+
+                    <div class="google-rating">
+                        <strong id="googleRating">
+                            4.8
+                        </strong>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+                    </div>
+
+                    <p>
+                        Trusted feedback from our patients
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="google-review-actions">
+
+                <!-- अपना Google Review URL यहाँ डालना है -->
+                <a href="https://maps.app.goo.gl/h5Wc7sBdLGtvZAxM6" class="review-btn google-btn google-review-link"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-google"></i>
+                    Write a Google Review
+                </a>
+
+                <a href="https://maps.app.goo.gl/h5Wc7sBdLGtvZAxM6" class="review-btn outline-btn google-review-link"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-location-dot"></i>
+                    View Google Reviews
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEBSITE PATIENT REVIEWS -->
+
+        <div class="website-reviews">
+
+            <div class="reviews-heading-row">
+
+                <div>
+                    <h3>
+                        <i class="fa-solid fa-comments"></i>
+                        Reviews From Our Patients
+                    </h3>
+
+                    <p>
+                        Reviews shared by patients after their OPD visit.
+                    </p>
+                </div>
+
+                <button type="button" class="review-btn primary-review-btn" onclick="openReviewModal()">
+                    <i class="fa-solid fa-pen"></i>
+                    Share Your Experience
+                </button>
+
+            </div>
+
+
+            <!-- REVIEWS WILL LOAD HERE -->
+
+            <div class="reviews-grid" id="reviewsContainer">
+
+                <div class="review-loading">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Loading patient reviews...
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================================
+     GOOGLE REVIEW SECTION
+     ========================================================= -->
+
+        <div class="google-review-box">
+
+            <div class="google-review-header">
+
+                <div class="google-icon">
+                    <i class="fa-brands fa-google"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Bharat Care Nursing Home
+                    </h3>
+
+                    <div class="google-rating">
+
+                        <strong>
+                            Google Reviews
+                        </strong>
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Share your experience with us on Google.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="google-review-actions">
+
+                <a href="https://maps.app.goo.gl/h5Wc7sBdLGtvZAxM6" target="_blank" rel="noopener noreferrer"
+                    class="review-btn google-btn google-review-link">
+
+                    <i class="fa-brands fa-google"></i>
+
+                    Write a Google Review
+
+                </a>
+
+
+                <a href="https://maps.app.goo.gl/h5Wc7sBdLGtvZAxM6" target="_blank" rel="noopener noreferrer"
+                    class="review-btn outline-btn google-review-link">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    View Google Reviews
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     REVIEW MODAL
+========================================================= -->
+
+    <div class="review-modal" id="reviewModal" style="display:none;">
+
+        <div class="review-modal-overlay" onclick="closeReviewModal()">
+        </div>
+
+
+        <div class="review-modal-box">
+
+            <button type="button" class="review-modal-close" onclick="closeReviewModal()" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="review-modal-header">
+
+                <div class="review-modal-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h2>
+                    Share Your Experience
+                </h2>
+
+                <p>
+                    We would love to hear about your experience
+                    at Bharat Care Nursing Home.
+                </p>
+
+            </div>
+
+
+            <form id="patientReviewForm">
+
+                <!-- Appointment ID -->
+
+                <div class="review-form-group">
+
+                    <label for="reviewAppointmentId">
+                        Appointment ID
+                    </label>
+
+                    <input type="text" id="reviewAppointmentId" placeholder="Enter #12345 or 12345" autocomplete="off"
+                        inputmode="numeric" required>
+
+                    <small>
+                        Your appointment must be marked as completed.
+                    </small>
+
+                </div>
+
+
+                <!-- Rating -->
+
+                <div class="review-form-group">
+
+                    <label>
+                        Your Rating
+                    </label>
+
+                    <div class="star-rating" id="starRating">
+
+                        <button type="button" data-rating="1">
+                            ★
+                        </button>
+
+                        <button type="button" data-rating="2">
+                            ★
+                        </button>
+
+                        <button type="button" data-rating="3">
+                            ★
+                        </button>
+
+                        <button type="button" data-rating="4">
+                            ★
+                        </button>
+
+                        <button type="button" data-rating="5">
+                            ★
+                        </button>
+
+                    </div>
+
+                    <input type="radio" name="rating" value="1">
+                    <input type="radio" name="rating" value="2">
+                    <input type="radio" name="rating" value="3">
+                    <input type="radio" name="rating" value="4">
+                    <input type="radio" name="rating" value="5">
+
+                </div>
+
+
+                <!-- Review -->
+
+                <div class="review-form-group">
+
+                    <label for="reviewText">
+                        Your Experience
+                    </label>
+
+                    <textarea id="reviewText" placeholder="Write your experience..." maxlength="1000"
+                        required></textarea>
+
+                    <small>
+                        Maximum 1000 characters.
+                    </small>
+
+                </div>
+
+
+                <div id="reviewFormMessage" class="review-form-message">
+                </div>
+
+
+                <button type="submit" class="review-submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Submit Review
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOCATION & DIRECTIONS SECTION -->
+    <section class="section location-section" id="location">
+        <div class="container">
+
+            <div class="section-header text-center">
+                <span class="sub-title">FIND US EASILY</span>
+                <h2>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Our Hospital Location
+                </h2>
+
+                <p>
+                    Bharat Care Nursing Home tak aasani se pahunchne ke liye
+                    map aur directions ka use karein.
+                </p>
+            </div>
+
+
+            <div class="location-grid">
+
+                <!-- MAP -->
+                <div class="map-container">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Purabpali,Dharamganj,Kishanganj,Bihar,855107&output=embed"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+
+
+                <!-- LOCATION INFORMATION -->
+                <div class="location-info glass-panel">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+
+                    <h3>BHARAT CARE NURSING HOME</h3>
+
+                    <p class="location-address">
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Purabpali, in premises of Bharat Care Centre,
+                        Dharamganj, Kishanganj, Bihar – 855107
+                    </p>
+
+
+                    <div class="location-details">
+
+                        <div class="location-detail">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <div>
+                                <strong>Emergency Helpline</strong>
+                                <span>+91 9472396918</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="location-detail">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <div>
+                                <strong>OPD Timing</strong>
+                                <span>10:00 AM – 5:00 PM</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GOOGLE MAP DIRECTIONS BUTTON -->
+
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=26.0994272,87.9591064" target="_blank"
+                        class="btn btn-primary btn-lg location-btn">
+
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+
+                        Get Directions
+
+                    </a>
+
+
+                    <p class="location-help">
+                        <i class="fa-solid fa-car"></i>
+                        Click "Get Directions" to navigate from your
+                        current location.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Patient Dashboard Section -->
+    <section class="section dashboard-section hidden" id="dashboardSection">
+        <div class="container">
+            <div class="dashboard-header flex-between">
+                <div>
+                    <h2><i class="fa-solid fa-user-gear"></i> My Appointments Dashboard</h2>
+                    <p>Track your upcoming OPD appointments at Bharat Care Nursing Home</p>
+                </div>
+                <button class="btn btn-outline" id="closeDashboardBtn"><i class="fa-solid fa-xmark"></i> Close
+                    Dashboard</button>
+            </div>
+
+            <div class="dashboard-cards-grid" id="dashboardApptsContainer">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="about">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="brand-logo footer-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <span class="brand-name">BHARAT <span class="text-gradient">CARE</span></span>
+                </a>
+                <p>BHARAT CARE NURSING HOME is committed to high-quality healthcare in Kishanganj, Bihar with specialist
+                    consultations in Urology, Gynecology, IVF Fertility, and ENT.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#specialties">Departments</a></li>
+                    <li><a href="#doctors">Our Doctors</a></li>
+                    <li><a href="#whatsapp-section">WhatsApp Booking</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Departments</h4>
+                <ul>
+                    <li><a href="#">Urology (Dr. Bharat Prasad)</a></li>
+                    <li><a href="#">Gynecology (Dr. Nidhi Kumari)</a></li>
+                    <li><a href="#">Fertility & IVF (Dr. Shalini Prasad)</a></li>
+                    <li><a href="#">ENT Specialist (Dr. Sachin Prasad)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hospital Contact</h4>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Purabpali in premises of Bharat Care Centre,
+                    Dharamganj, Kishanganj, Bihar (855107)
+                </p>
+
+                <a href="https://www.google.com/maps/dir/?api=1&  destination=26.0994272,87.9591064" target="_blank"
+                    class="btn btn-primary btn-lg location-btn">
+
+                    <i class="fa-solid fa-diamond-turn-right"></i>
+
+                    Get Directions
+
+                </a>
+
+
+                <p><i class="fa-solid fa-phone"></i> Emergency Hotline: +91 9472396918</p>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Booking: +91 9472396918</p>
+                <p><i class="fa-solid fa-clock"></i> OPD: 10:00 AM to 5:00 PM (Sun: 10 AM - 1 PM)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>© 2026 BHARAT CARE NURSING HOME. Purabpali, Dharamganj, Kishanganj, Bihar (855107). All rights
+                    reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL 1: WEB APPOINTMENT BOOKING MODAL -->
+    <div class="modal-overlay hidden" id="bookingModal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" id="closeBookingModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-calendar-plus text-primary"></i> Book Doctor Appointment</h3>
+                <p id="modalDocSub">BHARAT CARE NURSING HOME - OPD Consultation</p>
+            </div>
+
+            <form id="bookingForm" class="modal-form">
+                <input type="hidden" id="bookingDoctorId">
+
+                <div class="selected-doc-banner" id="modalDocBanner">
+                    <img id="modalDocPhoto" src="" alt="Doctor">
+                    <div>
+                        <h4 id="modalDocName">Dr. Name</h4>
+                        <span id="modalDocSpec" class="badge">Specialty</span>
+                        <div class="doc-fee-tag" id="modalDocFee">Consultation Fee: ₹500</div>
+                    </div>
+                </div>
+
+                <div class="form-row grid-2">
+                    <div class="form-group">
+                        <label for="apptDate"><i class="fa-solid fa-calendar-day"></i> Select Appointment Date</label>
+                        <input type="date" id="apptDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apptSlot"><i class="fa-solid fa-clock"></i> Select Time Slot</label>
+                        <select id="apptSlot" required disabled>
+                            <option value="">Select doctor and date first</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientName"><i class="fa-solid fa-user"></i> Patient Full Name</label>
+                    <input type="text" id="patientName" placeholder="Enter patient full name" required>
+                </div>
+
+                <div class="form-row grid-3">
+                    <div class="form-group">
+                        <label for="patientPhone"><i class="fa-solid fa-phone"></i> Mobile Phone</label>
+                        <input type="tel" id="patientPhone" placeholder="+91 9472396918" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge"><i class="fa-solid fa-cake-candles"></i> Age</label>
+                        <input type="number" id="patientAge" placeholder="30" min="1" max="120" value="30">
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                        <select id="patientGender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientEmail"><i class="fa-solid fa-envelope"></i> Email (Optional)</label>
+                    <input type="email" id="patientEmail" placeholder="patient@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="apptReason"><i class="fa-solid fa-notes-medical"></i> Symptoms / Reason for
+                        Visit</label>
+                    <textarea id="apptReason" rows="2"
+                        placeholder="Describe symptoms or reason for appointment..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="confirmBookingBtn">
+                    <i class="fa-solid fa-check-circle"></i> Confirm Appointment (Fee ₹500)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: AUTH MODAL (LOGIN / REGISTER) -->
+    <div class="modal-overlay hidden" id="authModal">
+        <div class="modal-card auth-modal-card glass-panel">
+            <button class="modal-close" id="closeAuthModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTabBtn">Patient Login</button>
+                <button class="auth-tab" id="signupTabBtn">New Registration</button>
+            </div>
+            <form id="loginForm" class="modal-form auth-form">
+                <h3 id="loginTitle">Patient Login</h3>
+                <p class="auth-sub" id="loginSubtitle">Login with your registered email or mobile number.</p>
+                <div id="loginModeButtons" style="display:flex;gap:8px;margin-bottom:16px;">
+                    <button type="button" class="btn btn-primary" id="patientLoginMode" style="flex:1;">👤 Patient Login</button>
+                    <button type="button" class="btn btn-outline" id="staffLoginMode" style="flex:1;">🏥 Hospital Staff</button>
+                </div>
+                <div class="form-group hidden" id="staffRoleGroup">
+                    <label><i class="fa-solid fa-user-shield"></i> Hospital Login As</label>
+                    <select id="staffLoginRole">
+                        <option value="manager">👨‍💼 Manager</option>
+                        <option value="doctor">👨‍⚕️ Doctor</option>
+                        <option value="cashier">💰 Cashier</option>
+                        <option value="lab_cashier">🧪 Lab Cashier</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email or Mobile Number</label>
+                    <input type="text" id="loginIdentifier" placeholder="Enter email or mobile number" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginSubmitBtn">Login as Patient</button>
+            </form>
+
+    <!-- Signup Form -->
+            <form id="signupForm" class="modal-form auth-form hidden">
+                <h3>Create Patient Account</h3>
+                <p class="auth-sub">Register for fast doctor OPD booking</p>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Full Name</label>
+                    <input type="text" id="signupName" placeholder="Rahul Kumar" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="rahul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> Mobile Number</label>
+                    <input type="tel" id="signupPhone" placeholder="+919472396918" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Register Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING INTERACTIVE WHATSAPP BOT CHAT SIMULATOR WIDGET -->
+    <div class="wa-floating-container">
+        <button class="wa-fab-button" id="waFabBtn" title="Open Interactive WhatsApp Doctor Booking Bot">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="wa-fab-pulse"></span>
+        </button>
+
+        <div class="wa-chat-window hidden" id="waChatWindow">
+            <div class="wa-chat-header">
+                <div class="wa-header-info">
+                    <div class="wa-avatar"><i class="fa-solid fa-hospital"></i></div>
+                    <div>
+                        <strong>Bharat Care WhatsApp Assistant</strong>
+                        <span class="wa-status"><i class="fa-solid fa-circle"></i> Online 24x7</span>
+                    </div>
+                </div>
+                <button class="wa-close-btn" id="waCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="wa-chat-messages" id="waChatMessages">
+                <div class="wa-msg bot">
+                    <div class="wa-bubble">
+                        🏥 <strong>Namaste! Bharat Care Nursing Home me swagat hai.</strong><br>
+                        Main aapka WhatsApp Doctor Booking Assistant hoon.<br><br>
+                        Aap niche quick option par click karke ya 'Hi' likhkar doctor appointment book kar sakte hain!
+                    </div>
+                    <span class="wa-time">Just now</span>
+                </div>
+            </div>
+
+            <div class="wa-quick-chips">
+                <button class="chip-btn" data-msg="1">1. Book Appointment</button>
+                <button class="chip-btn" data-msg="2">2. View Doctors</button>
+                <button class="chip-btn" data-msg="3">3. My Booking Status</button>
+                <button class="chip-btn" data-msg="4">4. Emergency</button>
+            </div>
+
+            <div class="wa-chat-input-area">
+                <input type="text" id="waInput" placeholder="Type a message or number...">
+                <button id="waSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Main Frontend JS -->
+    <!-- <script src="/static/js/app.js"></script> -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
